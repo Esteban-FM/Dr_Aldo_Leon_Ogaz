@@ -136,11 +136,13 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <img
-            src="/hero/foto.avif"
-            alt="Dr. Aldo León Ogaz, Urólogo"
-            className="hero-photo h-80 w-64 flex-shrink-0 rounded-2xl object-cover shadow-md"
-          />
+          <div className="hero-photo w-full flex-shrink-0 overflow-hidden rounded-2xl shadow-lg md:w-[420px]">
+            <img
+              src="/hero/foto.avif"
+              alt="Dr. Aldo León Ogaz, Urólogo"
+              className="aspect-[3/4] w-full object-cover md:aspect-auto md:h-[520px]"
+            />
+          </div>
         </div>
       </section>
 
