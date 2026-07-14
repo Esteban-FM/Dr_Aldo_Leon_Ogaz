@@ -5,6 +5,6 @@ import "../styles/index.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <SedePage slug="iztapalapa" />
+    <SedePage slug="cdmx" />
   </StrictMode>
 );

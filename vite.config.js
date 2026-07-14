@@ -11,7 +11,7 @@ export default defineConfig({
       input: {
         home: resolve(__dirname, "index.html"),
         chihuahua: resolve(__dirname, "chihuahua/index.html"),
-        iztapalapa: resolve(__dirname, "iztapalapa/index.html"),
+        cdmx: resolve(__dirname, "cdmx/index.html"),
         papilomaHumano: resolve(__dirname, "papiloma-humano/index.html"),
         disfuncionErectil: resolve(__dirname, "disfuncion-erectil/index.html"),
         crecimientoProstatico: resolve(__dirname, "crecimiento-prostatico/index.html"),

@@ -1,4 +1,4 @@
-// Datos de cada sede para las landing pages /chihuahua y /iztapalapa.
+// Datos de cada sede para las landing pages /chihuahua y /cdmx.
 // Usadas también para el Schema.org LocalBusiness de cada página.
 
 export const sedes = {
@@ -13,11 +13,8 @@ export const sedes = {
     formasDePago: ["Efectivo", "Transferencia", "PayPal", "Tarjeta de débito", "Tarjeta de crédito"],
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=28.6640224,-106.1305618",
   },
-  iztapalapa: {
-    slug: "iztapalapa",
-    // Ubicación real: Héroes de Padierna, Alcaldía Magdalena Contreras — NO Iztapalapa.
-    // TODO: evaluar si conviene cambiar el slug/URL a /cdmx antes de publicar
-    // (afecta la campaña de Google Ads apuntada a esta landing).
+  cdmx: {
+    slug: "cdmx",
     // TODO: confirmar nombre del hospital/clínica en esta dirección.
     nombreSede: "Sede Ciudad de México",
     direccion: "Camino de Sta. Teresa 1055-S, Héroes de Padierna, Ciudad de México, CP 10700",
