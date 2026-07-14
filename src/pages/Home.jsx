@@ -6,10 +6,12 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
 import Lightbox from "../components/Lightbox";
+import DoctorCarousel from "../components/DoctorCarousel";
 import { doctor } from "../data/doctor";
 import { padecimientos } from "../data/padecimientos";
 
 const fotosChihuahua = [1, 2, 3, 4, 5, 6].map((i) => `/instalaciones/chihuahua/foto-${i}.avif`);
+const fotosDoctor = [1, 2, 3].map((i) => `/doctor/foto-${i}.avif`);
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -68,7 +70,16 @@ export default function Home() {
       scrollTrigger: { trigger: ".cred-chips", start: "top 85%" },
     });
 
-    // 6. Experiencia items — slide from left
+    // 6. Carrusel del doctor
+    gsap.from(".doctor-carousel", {
+      opacity: 0,
+      x: reduced ? 0 : -24,
+      duration: 0.5,
+      ease: "power3.out",
+      scrollTrigger: { trigger: ".doctor-carousel", start: "top 82%" },
+    });
+
+    // 7. Experiencia items — slide from left
     gsap.from(".exp-item", {
       opacity: 0,
       x: reduced ? 0 : -16,
@@ -220,44 +231,55 @@ export default function Home() {
         <div className="mx-auto max-w-5xl">
           <h2 className="anim-head mb-8 text-2xl font-semibold text-navy">Experiencia y credenciales</h2>
 
-          <div className="cred-chips mb-8 flex flex-wrap gap-2">
-            {doctor.cedulas.map((c) => (
-              <span key={c} className="cred-chip rounded-full border border-rule bg-canvas px-3 py-1 text-xs font-medium text-ink">
-                Cédula profesional {c}
-              </span>
-            ))}
-            {doctor.idiomas.map((i) => (
-              <span key={i} className="cred-chip rounded-full border border-rule bg-canvas px-3 py-1 text-xs font-medium text-ink">
-                {i}
-              </span>
-            ))}
-          </div>
+          <div className="grid gap-8 md:grid-cols-[280px_1fr] md:gap-12">
 
-          <ul className="exp-list space-y-4">
-            {doctor.experiencia.map((e) => (
-              <li key={e.puesto} className="exp-item flex gap-4">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand" />
-                <div>
-                  <p className="font-medium text-navy">{e.puesto}</p>
-                  <p className="text-sm text-dim">{e.lugar} · {e.periodo}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
+            {/* Carrusel de fotos del doctor */}
+            <div className="mx-auto w-full max-w-[280px] md:mx-0">
+              <DoctorCarousel images={fotosDoctor} />
+            </div>
 
-          {doctor.reconocimientos?.length > 0 && (
-            <div className="mt-10">
-              <h3 className="anim-head mb-4 text-base font-semibold text-navy">Reconocimientos</h3>
-              <ul className="recon-list space-y-3">
-                {doctor.reconocimientos.map((r) => (
-                  <li key={r} className="recon-item flex gap-4">
-                    <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-400" />
-                    <p className="text-sm text-ink">{r}</p>
+            {/* Credenciales y experiencia */}
+            <div>
+              <div className="cred-chips mb-6 flex flex-wrap gap-2">
+                {doctor.cedulas.map((c) => (
+                  <span key={c} className="cred-chip rounded-full border border-rule bg-canvas px-3 py-1 text-xs font-medium text-ink">
+                    Cédula profesional {c}
+                  </span>
+                ))}
+                {doctor.idiomas.map((i) => (
+                  <span key={i} className="cred-chip rounded-full border border-rule bg-canvas px-3 py-1 text-xs font-medium text-ink">
+                    {i}
+                  </span>
+                ))}
+              </div>
+
+              <ul className="exp-list space-y-4">
+                {doctor.experiencia.map((e) => (
+                  <li key={e.puesto} className="exp-item flex gap-4">
+                    <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand" />
+                    <div>
+                      <p className="font-medium text-navy">{e.puesto}</p>
+                      <p className="text-sm text-dim">{e.lugar} · {e.periodo}</p>
+                    </div>
                   </li>
                 ))}
               </ul>
+
+              {doctor.reconocimientos?.length > 0 && (
+                <div className="mt-8">
+                  <h3 className="anim-head mb-4 text-base font-semibold text-navy">Reconocimientos</h3>
+                  <ul className="recon-list space-y-3">
+                    {doctor.reconocimientos.map((r) => (
+                      <li key={r} className="recon-item flex gap-4">
+                        <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-400" />
+                        <p className="text-sm text-ink">{r}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
-          )}
+          </div>
         </div>
       </section>
 
