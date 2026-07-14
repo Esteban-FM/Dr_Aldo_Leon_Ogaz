@@ -129,7 +129,7 @@ export default function Home() {
             </ul>
             <div className="hero-buttons mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
               <a
-                href={`https://wa.me/${doctor.whatsapp}`}
+                href={`https://wa.me/${doctor.whatsapp}?text=${encodeURIComponent("Hola, quisiera agendar una consulta.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-pill rounded-full bg-emerald-500 px-6 py-3 font-medium text-white transition-colors hover:bg-emerald-600"
