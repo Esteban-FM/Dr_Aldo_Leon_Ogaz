@@ -1,17 +1,21 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
+import Lightbox from "../components/Lightbox";
 import { doctor } from "../data/doctor";
 import { padecimientos } from "../data/padecimientos";
+
+const fotosChihuahua = [1, 2, 3, 4, 5, 6].map((i) => `/instalaciones/chihuahua/foto-${i}.avif`);
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const containerRef = useRef(null);
+  const [lightboxIndex, setLightboxIndex] = useState(null);
 
   useGSAP(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -131,15 +135,20 @@ export default function Home() {
         <div className="mx-auto max-w-5xl">
           <h2 className="anim-head mb-6 text-2xl font-semibold text-navy">Instalaciones</h2>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="install-frame overflow-hidden rounded-2xl">
+            {fotosChihuahua.map((src, index) => (
+              <button
+                key={src}
+                className="install-frame overflow-hidden rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+                onClick={() => setLightboxIndex(index)}
+                aria-label={`Ver foto ${index + 1}`}
+              >
                 <img
-                  src={`/instalaciones/chihuahua/foto-${i}.avif`}
-                  alt={`Instalaciones consultorio Chihuahua ${i}`}
-                  className="aspect-square w-full object-cover"
+                  src={src}
+                  alt={`Instalaciones consultorio Chihuahua ${index + 1}`}
+                  className="aspect-square w-full cursor-pointer object-cover"
                   loading="lazy"
                 />
-              </div>
+              </button>
             ))}
           </div>
         </div>
@@ -254,6 +263,14 @@ export default function Home() {
 
       <Footer />
       <FloatingWhatsApp mensaje="Hola, quisiera agendar una consulta." />
+
+      {lightboxIndex !== null && (
+        <Lightbox
+          images={fotosChihuahua}
+          startIndex={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+        />
+      )}
     </div>
   );
 }

@@ -1,14 +1,16 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
+import Lightbox from "../components/Lightbox";
 import { sedes } from "../data/sedes";
 
 export default function SedePage({ slug }) {
   const sede = sedes[slug];
   const containerRef = useRef(null);
+  const [lightboxIndex, setLightboxIndex] = useState(null);
 
   useGSAP(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -70,14 +72,19 @@ export default function SedePage({ slug }) {
               <h2 className="mb-4 text-lg font-semibold text-navy">Instalaciones</h2>
               <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
                 {sede.fotos.map((src, i) => (
-                  <div key={src} className="install-frame overflow-hidden rounded-2xl">
+                  <button
+                    key={src}
+                    className="install-frame overflow-hidden rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+                    onClick={() => setLightboxIndex(i)}
+                    aria-label={`Ver foto ${i + 1}`}
+                  >
                     <img
                       src={src}
                       alt={`Instalaciones ${sede.nombreSede} ${i + 1}`}
-                      className="aspect-square w-full object-cover"
+                      className="aspect-square w-full cursor-pointer object-cover"
                       loading="lazy"
                     />
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>
@@ -87,6 +94,14 @@ export default function SedePage({ slug }) {
 
       <Footer />
       <FloatingWhatsApp mensaje={`Hola, quisiera agendar una cita en la sede de ${sede.nombreSede}.`} />
+
+      {lightboxIndex !== null && (
+        <Lightbox
+          images={sede.fotos}
+          startIndex={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+        />
+      )}
     </div>
   );
 }
