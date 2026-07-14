@@ -136,8 +136,11 @@ export default function Home() {
               </a>
             </div>
           </div>
-          {/* Placeholder foto del médico — reemplazar con <img> real */}
-          <div className="hero-photo h-80 w-64 flex-shrink-0 rounded-2xl bg-canvas" />
+          <img
+            src="/hero/foto.avif"
+            alt="Dr. Aldo León Ogaz, Urólogo"
+            className="hero-photo h-80 w-64 flex-shrink-0 rounded-2xl object-cover shadow-md"
+          />
         </div>
       </section>
 
