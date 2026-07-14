@@ -17,3 +17,27 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Button press feedback — 150ms matches Emil's 100-160ms range */
+.btn-pill:active {
+  transform: scale(0.97);
+  transition: transform 150ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* WhatsApp button hover — guarded so touch devices don't trigger on tap */
+@media (hover: hover) and (pointer: fine) {
+  .wa-btn:hover {
+    transform: scale(1.05);
+    transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+}
+
+/* Reduced motion: keep opacity fades only, remove all movement */
+@media (prefers-reduced-motion: reduce) {
+  .btn-pill:active {
+    transform: none;
+  }
+  .wa-btn:hover {
+    transform: none;
+  }
+}
