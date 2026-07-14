@@ -15,16 +15,16 @@ export const sedes = {
   },
   iztapalapa: {
     slug: "iztapalapa",
-    // TODO: Doctoralia no lista todavía un consultorio específico en Iztapalapa;
-    // la sede más cercana registrada es Hospital MAC la Viga (CDMX, colonia
-    // limítrofe con Iztapalapa). Confirmar con el médico la dirección exacta
-    // de la sede de Iztapalapa antes de publicar.
-    nombreSede: "Hospital MAC la Viga",
-    direccion: "Calzada la Viga 117, interior 811, Ciudad de México, CP 09430",
-    telefono: "55 3105 1808",
+    // Ubicación real: Héroes de Padierna, Alcaldía Magdalena Contreras — NO Iztapalapa.
+    // TODO: evaluar si conviene cambiar el slug/URL a /cdmx antes de publicar
+    // (afecta la campaña de Google Ads apuntada a esta landing).
+    // TODO: confirmar nombre del hospital/clínica en esta dirección.
+    nombreSede: "Sede Ciudad de México",
+    direccion: "Camino de Sta. Teresa 1055-S, Héroes de Padierna, Ciudad de México, CP 10700",
+    telefono: "614 304 4906",
     whatsapp: "526143044906",
-    coords: { lat: 19.4171028, lng: -99.1277847 },
-    formasDePago: ["Efectivo"],
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=19.4171028,-99.1277847",
+    coords: { lat: 19.3178, lng: -99.2069 },
+    formasDePago: ["Efectivo", "Transferencia", "Tarjeta de débito", "Tarjeta de crédito"],
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Camino+de+Sta.+Teresa+1055-S,+H%C3%A9roes+de+Padierna,+Ciudad+de+M%C3%A9xico",
   },
 };
