@@ -6,12 +6,7 @@ export const doctor = {
   especialidad: "Urólogo",
   certificacion: "Certificado por el Consejo Mexicano de Urología",
   cedulas: ["14818168", "10992932"],
-  bio: `Urólogo certificado por el Consejo Mexicano de Urología. Realizó sus
-estudios de subespecialidad en la CDMX en el Hospital Juárez de México con
-título de la UNAM. Realizó una alta especialidad en Uro-oncología y
-laparoscopia reconstructiva avanzada en el Centro Estatal de Cancerología de
-Chihuahua, avalada por la Universidad de Monterrey. Su prioridad es ofrecer
-una atención personalizada y centrada en las necesidades de cada paciente.`,
+  bio: `Cirujano Urólogo certificado por el Consejo Mexicano de Urología. Realizó sus estudios de subespecialidad en la CDMX en el Hospital Juárez de México con título de la UNAM.`,
   enfoque: [
     "Endourología y laparoscopia urológica",
     "Urología oncológica",
