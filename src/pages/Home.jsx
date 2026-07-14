@@ -145,6 +145,9 @@ export default function Home() {
                 Agendar en Doctoralia
               </a>
             </div>
+            <p className="hero-buttons mt-4 text-center text-xs text-dim md:text-left">
+              Mi objetivo es el diagnóstico y tratamiento personalizados, con un cuidado completo y lo menos invasivo posible.
+            </p>
           </div>
           <div className="hero-photo w-full flex-shrink-0 overflow-hidden rounded-2xl shadow-lg md:w-[420px]">
             <img
