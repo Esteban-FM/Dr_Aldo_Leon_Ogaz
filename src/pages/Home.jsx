@@ -130,10 +130,15 @@ export default function Home() {
       <section className="px-6 py-16">
         <div className="mx-auto max-w-5xl">
           <h2 className="anim-head mb-6 text-2xl font-semibold text-navy">Instalaciones</h2>
-          {/* TODO: reemplazar con <img> — fotos en public/instalaciones/chihuahua/ y public/instalaciones/cdmx/ */}
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
             {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="aspect-square rounded-2xl bg-rule" />
+              <img
+                key={i}
+                src={`/instalaciones/chihuahua/foto-${i}.avif`}
+                alt={`Instalaciones consultorio Chihuahua ${i}`}
+                className="aspect-square w-full rounded-2xl object-cover"
+                loading="lazy"
+              />
             ))}
           </div>
         </div>

@@ -64,6 +64,23 @@ export default function SedePage({ slug }) {
           >
             Ver ubicación en Google Maps →
           </a>
+
+          {sede.fotos?.length > 0 && (
+            <div className="mt-12">
+              <h2 className="mb-4 text-lg font-semibold text-navy">Instalaciones</h2>
+              <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+                {sede.fotos.map((src, i) => (
+                  <img
+                    key={src}
+                    src={src}
+                    alt={`Instalaciones ${sede.nombreSede} ${i + 1}`}
+                    className="aspect-square w-full rounded-2xl object-cover"
+                    loading="lazy"
+                  />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
