@@ -132,13 +132,14 @@ export default function Home() {
           <h2 className="anim-head mb-6 text-2xl font-semibold text-navy">Instalaciones</h2>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
             {[1, 2, 3, 4, 5, 6].map((i) => (
-              <img
-                key={i}
-                src={`/instalaciones/chihuahua/foto-${i}.avif`}
-                alt={`Instalaciones consultorio Chihuahua ${i}`}
-                className="aspect-square w-full rounded-2xl object-cover"
-                loading="lazy"
-              />
+              <div key={i} className="install-frame overflow-hidden rounded-2xl">
+                <img
+                  src={`/instalaciones/chihuahua/foto-${i}.avif`}
+                  alt={`Instalaciones consultorio Chihuahua ${i}`}
+                  className="aspect-square w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
             ))}
           </div>
         </div>

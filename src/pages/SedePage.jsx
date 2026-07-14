@@ -70,13 +70,14 @@ export default function SedePage({ slug }) {
               <h2 className="mb-4 text-lg font-semibold text-navy">Instalaciones</h2>
               <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
                 {sede.fotos.map((src, i) => (
-                  <img
-                    key={src}
-                    src={src}
-                    alt={`Instalaciones ${sede.nombreSede} ${i + 1}`}
-                    className="aspect-square w-full rounded-2xl object-cover"
-                    loading="lazy"
-                  />
+                  <div key={src} className="install-frame overflow-hidden rounded-2xl">
+                    <img
+                      src={src}
+                      alt={`Instalaciones ${sede.nombreSede} ${i + 1}`}
+                      className="aspect-square w-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
                 ))}
               </div>
             </div>
