@@ -4,6 +4,7 @@
 export const sedes = {
   chihuahua: {
     slug: "chihuahua",
+    ciudad: "Chihuahua",
     nombreSede: "Hospital Star Médica Chihuahua",
     direccion:
       "Periférico de la Juventud 6103, consultorio 1015, décimo piso, San Francisco Country Club, Chihuahua, Chih. 31110",
@@ -16,14 +17,25 @@ export const sedes = {
   },
   cdmx: {
     slug: "cdmx",
-    // TODO: confirmar nombre del hospital/clínica en esta dirección.
-    nombreSede: "Sede Ciudad de México",
-    direccion: "Camino de Sta. Teresa 1055-S, Héroes de Padierna, Ciudad de México, CP 10700",
+    ciudad: "Ciudad de México",
+    nombreSede: "Ciudad de México",
     telefono: "614 304 4906",
     whatsapp: "526143044906",
-    coords: { lat: 19.3178, lng: -99.2069 },
     formasDePago: ["Efectivo", "Transferencia", "Tarjeta de débito", "Tarjeta de crédito"],
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Camino+de+Sta.+Teresa+1055-S,+H%C3%A9roes+de+Padierna,+Ciudad+de+M%C3%A9xico",
-    fotos: [], // TODO: agregar fotos cuando estén disponibles en public/instalaciones/cdmx/
+    fotos: [1, 2, 3, 4, 5, 6].map((i) => `/instalaciones/cdmx/foto-${i}.avif`),
+    consultorios: [
+      {
+        nombre: "Hospital Ángeles Pedregal",
+        detalle: "Consultorio 1194",
+        direccion: "Camino Sta. Teresa 1055-S, Héroes de Padierna, Ciudad de México, C.P. 10700",
+        mapsUrl: "https://www.google.com/maps/search/?api=1&query=Camino+Sta.+Teresa+1055-S,+H%C3%A9roes+de+Padierna,+Ciudad+de+M%C3%A9xico",
+      },
+      {
+        nombre: "Hospital MAC La Viga",
+        detalle: "Consultorio 811, Piso 8",
+        direccion: "Calzada de la Viga #1174, El Triunfo, Iztapalapa, Ciudad de México, C.P. 09430",
+        mapsUrl: "https://www.google.com/maps/search/?api=1&query=Calzada+de+la+Viga+1174,+El+Triunfo,+Iztapalapa,+Ciudad+de+M%C3%A9xico",
+      },
+    ],
   },
 };

@@ -60,7 +60,7 @@ export default function PadecimientoPage({ slug, children }) {
               {Object.values(sedes).map((s) => (
                 <a
                   key={s.slug}
-                  href={`/${s.slug}`}
+                  href={`/${s.slug}/`}
                   className="btn-pill rounded-full border border-rule px-4 py-2 text-sm text-ink transition-colors hover:border-brand hover:text-brand"
                 >
                   {s.nombreSede}

@@ -9,8 +9,10 @@ import Lightbox from "../components/Lightbox";
 import DoctorCarousel from "../components/DoctorCarousel";
 import { doctor } from "../data/doctor";
 import { padecimientos } from "../data/padecimientos";
+import { sedes } from "../data/sedes";
+import EnfermedadesAccordion from "../components/EnfermedadesAccordion";
 
-const fotosChihuahua = [1, 2, 3, 4, 5, 6].map((i) => `/instalaciones/chihuahua/foto-${i}.avif`);
+const fotosInstalaciones = [1, 2, 3, 4, 5, 6, 7, 8].map((i) => `/instalaciones/home/foto-${i}.avif`);
 const fotosDoctor = [1, 2, 3].map((i) => `/doctor/foto-${i}.avif`);
 
 gsap.registerPlugin(ScrollTrigger);
@@ -148,8 +150,37 @@ export default function Home() {
             <p className="hero-buttons mt-4 text-center text-xs text-dim md:text-left">
               Mi objetivo es el diagnóstico y tratamiento personalizados, con un cuidado completo y lo menos invasivo posible.
             </p>
+
+            {/* Ubicaciones */}
+            <div className="hero-buttons mt-5 rounded-2xl border border-rule bg-canvas p-4 text-left">
+              <p className="text-xs font-medium uppercase tracking-wide text-dim">Consultorios</p>
+              <div className="mt-3 flex divide-x divide-rule">
+                {/* Chihuahua */}
+                <div className="flex-1 pr-4">
+                  <p className="text-sm font-semibold text-navy">{sedes.chihuahua.nombreSede}</p>
+                  <p className="mt-0.5 text-xs leading-relaxed text-ink">
+                    {sedes.chihuahua.direccion.split(",").slice(0, 2).join(",")}
+                  </p>
+                  <a href="/chihuahua/" className="mt-1.5 inline-block text-xs text-brand underline transition-colors hover:text-brand-hover">
+                    Ver consultorio →
+                  </a>
+                </div>
+                {/* CDMX */}
+                <div className="flex-1 space-y-2 pl-4">
+                  {sedes.cdmx.consultorios.map((c) => (
+                    <div key={c.nombre}>
+                      <p className="text-sm font-semibold text-navy">{c.nombre}</p>
+                      <p className="mt-0.5 text-xs leading-relaxed text-ink">{c.direccion}</p>
+                    </div>
+                  ))}
+                  <a href="/cdmx/" className="inline-block text-xs text-brand underline transition-colors hover:text-brand-hover">
+                    Ver consultorios →
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="hero-photo w-full flex-shrink-0 overflow-hidden rounded-2xl shadow-lg md:w-[420px]">
+          <div className="hero-photo w-full flex-shrink-0 overflow-hidden rounded-2xl shadow-lg md:w-[360px]">
             <img
               src="/hero/foto.avif"
               alt="Dr. Aldo León Ogaz, Urólogo"
@@ -163,8 +194,8 @@ export default function Home() {
       <section className="px-6 py-16">
         <div className="mx-auto max-w-5xl">
           <h2 className="anim-head mb-6 text-2xl font-semibold text-navy">Instalaciones</h2>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-            {fotosChihuahua.map((src, index) => (
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            {fotosInstalaciones.map((src, index) => (
               <button
                 key={src}
                 className="install-frame overflow-hidden rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
@@ -189,21 +220,8 @@ export default function Home() {
           <h2 className="anim-head mb-2 text-2xl font-semibold text-navy">
             Padecimientos y síntomas que atendemos
           </h2>
-          <p className="mb-8 text-sm text-dim">Selecciona un padecimiento para más información.</p>
-          <div className="pad-grid grid grid-cols-2 gap-4 md:grid-cols-3">
-            {padecimientos.map((p) => (
-              <a
-                key={p.slug}
-                href={`/${p.slug}`}
-                className="pad-card group rounded-2xl border border-rule bg-canvas p-5 transition-colors hover:border-brand hover:shadow-md"
-              >
-                <h3 className="font-medium text-navy transition-colors group-hover:text-brand">
-                  {p.nombre}
-                </h3>
-                <p className="mt-1 text-sm text-dim">{p.resumenCorto}</p>
-              </a>
-            ))}
-          </div>
+          <p className="mb-8 text-sm text-dim">Selecciona una categoría para ver los padecimientos.</p>
+          <EnfermedadesAccordion />
         </div>
       </section>
 
@@ -232,7 +250,7 @@ export default function Home() {
                     Agendar por WhatsApp
                   </a>
                   <a
-                    href={`/${p.slug}`}
+                    href={`/${p.slug}/`}
                     className="btn-pill rounded-full border border-rule px-4 py-2 text-center text-sm font-medium text-ink transition-colors hover:border-brand hover:text-brand"
                   >
                     Más información
@@ -306,7 +324,7 @@ export default function Home() {
 
       {lightboxIndex !== null && (
         <Lightbox
-          images={fotosChihuahua}
+          images={fotosInstalaciones}
           startIndex={lightboxIndex}
           onClose={() => setLightboxIndex(null)}
         />

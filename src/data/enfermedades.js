@@ -1,0 +1,138 @@
+export const enfermedades = [
+  {
+    grupo: "Cáncer urológico",
+    items: [
+      "Cáncer de próstata",
+      "Cáncer de vejiga",
+      "Cáncer renal",
+      "Cáncer testicular / Cáncer testicular seminoma",
+      "Cáncer de pene",
+      "Cáncer de células transicionales de la pelvis renal o del uréter",
+      "Cáncer en la vía urinaria (Riñón, Uréter, Vejiga, Próstata)",
+      "Cáncer en el aparato reproductor masculino (Testículo, Pene)",
+      "Tumor de Wilms",
+    ],
+  },
+  {
+    grupo: "Próstata",
+    items: [
+      "Hiperplasia prostática benigna (HPB) / Agrandamiento de la próstata",
+      "Prostatitis aguda",
+      "Prostatitis bacteriana crónica",
+      "Prostatitis crónica",
+      "Prostatitis no bacteriana",
+    ],
+  },
+  {
+    grupo: "Cálculos y litiasis",
+    items: [
+      "Cálculos renales / Nefrolitiasis / Litiasis renal",
+      "Cálculos en el uréter",
+      "Cálculos en la vejiga",
+      "Nefrocalcinosis",
+      "Piedras en el riñón",
+    ],
+  },
+  {
+    grupo: "Infecciones urinarias",
+    items: [
+      "Infección del tracto urinario (ITU / IVU)",
+      "Cistitis aguda",
+      "Cistitis abacteriana",
+      "Bacteriuria asintomática",
+      "Pielonefritis aguda",
+      "Pielonefritis aguda enfisematosa",
+      "Absceso renal",
+      "Infección urinaria recurrente",
+      "Infección urinaria asociada a catéter",
+      "Infección de las vías urinarias complicada",
+    ],
+  },
+  {
+    grupo: "Enfermedades de transmisión sexual",
+    items: [
+      "Virus del papiloma humano (VPH) / Verrugas genitales",
+      "Herpes genital",
+      "Clamidia / Uretritis por clamidia",
+      "Gonorrea",
+      "Sífilis",
+      "Tricomoniasis",
+      "Linfogranuloma venéreo",
+    ],
+  },
+  {
+    grupo: "Disfunción sexual",
+    items: [
+      "Disfunción eréctil",
+      "Eyaculación precoz / Trastornos de la eyaculación",
+      "Deseo sexual hipoactivo",
+      "Enfermedad de Peyronie",
+      "Priapismo",
+      "Hipogonadismo",
+    ],
+  },
+  {
+    grupo: "Testículos y escroto",
+    items: [
+      "Torsión testicular (Escroto agudo)",
+      "Hidrocele",
+      "Varicocele / Venas varicosas en el escroto",
+      "Orquitis / Epididimitis (Orquiepididimitis)",
+      "Criptorquidia / Testículo no descendido",
+      "Isquemia testicular",
+    ],
+  },
+  {
+    grupo: "Incontinencia y vejiga",
+    items: [
+      "Incontinencia urinaria de esfuerzo",
+      "Incontinencia urinaria de urgencia",
+      "Vejiga hiperactiva / neurógena",
+      "Vejiga inestable / irritable",
+      "Fístula vesicovaginal",
+      "Fístula ureterovaginal",
+      "Lesión vesical y uretral",
+    ],
+  },
+  {
+    grupo: "Riñón",
+    items: [
+      "Hidronefrosis (bilateral y unilateral)",
+      "Poliquistosis renal / Enfermedad poliquística renal",
+      "Lesión renal aguda",
+      "Pieloxantogranulomatosis",
+      "Feocromocitoma",
+    ],
+  },
+  {
+    grupo: "Uretra y obstrucciones",
+    items: [
+      "Estenosis uretral / Estenosis meatal",
+      "Estenosis de la unión ureteropiélica (UUP)",
+      "Obstrucción uretral y ureteral",
+      "Retención aguda de orina (RAO)",
+      "Reflujo vesicoureteral",
+      "Uretritis crónica",
+      "Disuria / Polaquiuria",
+    ],
+  },
+  {
+    grupo: "Pene y prepucio",
+    items: [
+      "Fimosis / Prepucio redundante",
+      "Parafimosis",
+      "Balanitis / Balanopostitis",
+      "Hipospadias",
+    ],
+  },
+  {
+    grupo: "Urgencias urológicas",
+    items: [
+      "Gangrena de Fournier (Síndrome de Fournier)",
+      "Torsión testicular (Escroto agudo)",
+      "Priapismo",
+      "Retención aguda de orina",
+      "Lesión traumática del riñón, vejiga y uretra",
+    ],
+  },
+];

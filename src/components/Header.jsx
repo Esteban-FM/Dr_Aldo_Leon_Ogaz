@@ -11,8 +11,8 @@ export default function Header() {
           <a href="/#padecimientos" className="transition-colors hover:text-brand">Padecimientos</a>
           <a href="/#consultas" className="transition-colors hover:text-brand">Consultas</a>
           <a href="/#experiencia" className="transition-colors hover:text-brand">Experiencia</a>
-          <a href="/chihuahua" className="transition-colors hover:text-brand">Chihuahua</a>
-          <a href="/cdmx" className="transition-colors hover:text-brand">CDMX</a>
+          <a href="/chihuahua/" className="transition-colors hover:text-brand">Chihuahua</a>
+          <a href="/cdmx/" className="transition-colors hover:text-brand">CDMX</a>
         </nav>
         <a
           href={doctor.redes.doctoralia}
