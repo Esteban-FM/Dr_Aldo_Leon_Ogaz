@@ -7,10 +7,14 @@ import Footer from "../components/Footer";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
 import Lightbox from "../components/Lightbox";
 import DoctorCarousel from "../components/DoctorCarousel";
+import InstalacionesCarousel from "../components/InstalacionesCarousel";
+import InstalacionesThumbnails from "../components/InstalacionesThumbnails";
 import EnfermedadesAccordion from "../components/EnfermedadesAccordion";
+import SedeSchema from "../components/SedeSchema";
 import { sedes } from "../data/sedes";
 import { doctor } from "../data/doctor";
 import { padecimientos } from "../data/padecimientos";
+import { useCarousel } from "../hooks/useCarousel";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,6 +24,7 @@ export default function SedePage({ slug }) {
   const sede = sedes[slug];
   const containerRef = useRef(null);
   const [lightboxIndex, setLightboxIndex] = useState(null);
+  const instalaciones = useCarousel(sede.fotos?.length || 1);
 
   const hasMultipleConsultorios = Array.isArray(sede.consultorios) && sede.consultorios.length > 0;
 
@@ -63,6 +68,16 @@ export default function SedePage({ slug }) {
       scrollTrigger: { trigger: ".doctor-carousel", start: "top 82%" },
     });
 
+    gsap.from(".instalaciones-carousel", {
+      opacity: 0, x: reduced ? 0 : -24, duration: 0.5, ease: "power3.out",
+      scrollTrigger: { trigger: ".instalaciones-carousel", start: "top 82%" },
+    });
+    gsap.from(".install-text", {
+      opacity: 0, y: reduced ? 0 : 16, duration: 0.4, ease: "power3.out",
+      stagger: reduced ? 0 : 0.08,
+      scrollTrigger: { trigger: ".install-text", start: "top 82%" },
+    });
+
     gsap.from(".exp-item", {
       opacity: 0, x: reduced ? 0 : -16, duration: 0.3, ease: "power3.out",
       stagger: reduced ? 0 : 0.05,
@@ -78,10 +93,11 @@ export default function SedePage({ slug }) {
 
   return (
     <div ref={containerRef}>
+      <SedeSchema slug={slug} />
       <Header />
 
       <section className="bg-white">
-        <div className="mx-auto max-w-5xl px-6 py-24">
+        <div className="mx-auto max-w-5xl px-6 pb-24 pt-16">
           <div className="flex flex-col items-center gap-10 md:flex-row md:items-start">
 
             {/* Columna izquierda: info de sede */}
@@ -172,32 +188,73 @@ export default function SedePage({ slug }) {
             </div>
 
           </div>
-
-          {/* Galería de fotos */}
-          {sede.fotos?.length > 0 && (
-            <div className="mt-12">
-              <h2 className="mb-4 text-lg font-semibold text-navy">Instalaciones</h2>
-              <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-                {sede.fotos.map((src, i) => (
-                  <button
-                    key={src}
-                    className="install-frame overflow-hidden rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
-                    onClick={() => setLightboxIndex(i)}
-                    aria-label={`Ver foto ${i + 1}`}
-                  >
-                    <img
-                      src={src}
-                      alt={`Instalaciones ${sede.nombreSede} ${i + 1}`}
-                      className="aspect-square w-full cursor-pointer object-cover"
-                      loading="lazy"
-                    />
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       </section>
+
+      {/* Instalaciones */}
+      {sede.fotos?.length > 0 && (
+        <section className="px-6 py-16">
+          <div className="mx-auto max-w-5xl">
+            <div className="flex flex-col gap-10 md:flex-row md:items-start">
+              <div className="w-full flex-shrink-0 md:w-[380px]">
+                <InstalacionesCarousel
+                  images={sede.fotosGrande}
+                  current={instalaciones.current}
+                  onOpenLightbox={setLightboxIndex}
+                />
+                {/* En móvil las miniaturas van pegadas a la imagen */}
+                <div className="mt-3 md:hidden">
+                  <InstalacionesThumbnails
+                    images={sede.fotos}
+                    current={instalaciones.current}
+                    onNavigate={instalaciones.navigate}
+                  />
+                </div>
+              </div>
+              <div className="flex-1 text-center md:text-left">
+                <h2 className="anim-head mb-4 text-3xl font-bold leading-tight text-navy">
+                  Atención urológica especializada con diagnóstico preciso desde tu primera consulta
+                </h2>
+                <p className="install-text leading-relaxed text-ink">
+                  Atendemos los principales padecimientos urológicos con un enfoque integral y
+                  tecnología de vanguardia.
+                </p>
+                <p className="install-text mt-4 leading-relaxed text-ink">
+                  Desde tu primera consulta obtendrás una valoración precisa, diagnóstico oportuno y
+                  un plan de tratamiento personalizado. Atención privada, profesional y enfocada en
+                  mejorar tu calidad de vida.
+                </p>
+                <div className="install-text mt-6 flex flex-wrap justify-center gap-3 md:justify-start">
+                  <a
+                    href={`https://wa.me/${sede.whatsapp}?text=${encodeURIComponent("Hola, quisiera agendar una consulta.")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-pill rounded-full bg-emerald-500 px-6 py-3 font-medium text-white transition-colors hover:bg-emerald-600"
+                  >
+                    Escribir por WhatsApp
+                  </a>
+                  <a
+                    href={doctor.redes.doctoralia}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-pill rounded-full border border-brand px-6 py-3 font-medium text-brand transition-colors hover:bg-brand hover:text-white"
+                  >
+                    Agendar en Doctoralia
+                  </a>
+                </div>
+                {/* En desktop las miniaturas van debajo de los botones */}
+                <div className="install-text mt-6 hidden md:block">
+                  <InstalacionesThumbnails
+                    images={sede.fotos}
+                    current={instalaciones.current}
+                    onNavigate={instalaciones.navigate}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Padecimientos */}
       <section id="padecimientos" className="bg-white px-6 py-16">
@@ -215,25 +272,33 @@ export default function SedePage({ slug }) {
         <div className="mx-auto max-w-5xl">
           <h2 className="anim-head mb-2 text-2xl font-semibold text-navy">Consultas y paquetes</h2>
           <p className="mb-8 text-sm text-dim">Agenda directamente o solicita más información.</p>
-          <div className="consulta-grid grid gap-5 md:grid-cols-3">
+          <div className="consulta-grid grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5">
             {padecimientos.map((p) => (
-              <div key={p.slug} className="consulta-card flex flex-col justify-between rounded-2xl border border-rule bg-white p-6">
+              <div key={p.slug} className="consulta-card flex flex-col overflow-hidden rounded-2xl border border-rule bg-white">
                 <div>
-                  <h3 className="font-semibold text-navy">{p.nombre}</h3>
-                  <p className="mt-2 text-sm text-dim">{p.resumenCorto}</p>
+                  <img
+                    src={`/consultas/${p.slug}.avif`}
+                    alt={p.nombre}
+                    className="aspect-video w-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="p-3 md:p-6">
+                    <h3 className="text-sm font-semibold text-navy md:text-base">{p.nombre}</h3>
+                    <p className="mt-1.5 text-xs text-dim md:mt-2 md:text-sm">{p.resumenCorto}</p>
+                  </div>
                 </div>
-                <div className="mt-6 flex flex-col gap-2">
+                <div className="flex flex-col gap-2 px-3 pb-3 pt-1 md:px-6 md:pb-6 md:pt-2">
                   <a
                     href={`https://wa.me/${doctor.whatsapp}?text=${encodeURIComponent(p.mensajeWhatsapp)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-pill rounded-full bg-emerald-500 px-4 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-emerald-600"
+                    className="btn-pill rounded-full bg-emerald-500 px-2 py-2 text-center text-xs font-medium text-white transition-colors hover:bg-emerald-600 md:px-4 md:text-sm"
                   >
                     Agendar por WhatsApp
                   </a>
                   <a
                     href={`/${p.slug}/`}
-                    className="btn-pill rounded-full border border-rule px-4 py-2 text-center text-sm font-medium text-ink transition-colors hover:border-brand hover:text-brand"
+                    className="btn-pill rounded-full border border-rule px-2 py-2 text-center text-xs font-medium text-ink transition-colors hover:border-brand hover:text-brand md:px-4 md:text-sm"
                   >
                     Más información
                   </a>
@@ -299,7 +364,7 @@ export default function SedePage({ slug }) {
 
       {lightboxIndex !== null && (
         <Lightbox
-          images={sede.fotos}
+          images={sede.fotosGrande}
           startIndex={lightboxIndex}
           onClose={() => setLightboxIndex(null)}
         />

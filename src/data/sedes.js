@@ -14,6 +14,7 @@ export const sedes = {
     formasDePago: ["Efectivo", "Transferencia", "PayPal", "Tarjeta de débito", "Tarjeta de crédito"],
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=28.6640224,-106.1305618",
     fotos: [1, 2, 3, 4, 5, 6].map((i) => `/instalaciones/chihuahua/foto-${i}.avif`),
+    fotosGrande: [1, 2, 3, 4, 5, 6].map((i) => `/instalaciones/chihuahua/grande/foto-${i}.avif`),
   },
   cdmx: {
     slug: "cdmx",
@@ -23,6 +24,7 @@ export const sedes = {
     whatsapp: "526143044906",
     formasDePago: ["Efectivo", "Transferencia", "Tarjeta de débito", "Tarjeta de crédito"],
     fotos: [1, 2, 3, 4, 5, 6].map((i) => `/instalaciones/cdmx/foto-${i}.avif`),
+    fotosGrande: [1, 2, 3, 4, 5, 6].map((i) => `/instalaciones/cdmx/grande/foto-${i}.avif`),
     consultorios: [
       {
         nombre: "Hospital Ángeles Pedregal",
