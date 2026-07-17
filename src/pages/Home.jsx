@@ -7,13 +7,11 @@ import Footer from "../components/Footer";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
 import Lightbox from "../components/Lightbox";
 import DoctorCarousel from "../components/DoctorCarousel";
-import InstalacionesCarousel from "../components/InstalacionesCarousel";
-import InstalacionesThumbnails from "../components/InstalacionesThumbnails";
+import InstalacionesSection from "../components/InstalacionesSection";
 import { doctor } from "../data/doctor";
 import { padecimientos } from "../data/padecimientos";
 import { sedes } from "../data/sedes";
 import EnfermedadesAccordion from "../components/EnfermedadesAccordion";
-import { useCarousel } from "../hooks/useCarousel";
 
 // Miniaturas: recorte cuadrado. Grande: versión alargada para el carrusel
 // principal y el lightbox, compuesta para no perder información al recortar.
@@ -26,7 +24,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
   const containerRef = useRef(null);
   const [lightboxIndex, setLightboxIndex] = useState(null);
-  const instalaciones = useCarousel(fotosInstalaciones.length);
 
   useGSAP(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -215,67 +212,13 @@ export default function Home() {
       </section>
 
       {/* 2. Instalaciones */}
-      <section className="px-6 py-16">
-        <div className="mx-auto max-w-5xl">
-          <div className="flex flex-col gap-10 md:flex-row md:items-start">
-            <div className="w-full flex-shrink-0 md:w-[380px]">
-              <InstalacionesCarousel
-                images={fotosInstalacionesGrande}
-                current={instalaciones.current}
-                onOpenLightbox={setLightboxIndex}
-              />
-              {/* En móvil las miniaturas van pegadas a la imagen */}
-              <div className="mt-3 md:hidden">
-                <InstalacionesThumbnails
-                  images={fotosInstalaciones}
-                  current={instalaciones.current}
-                  onNavigate={instalaciones.navigate}
-                />
-              </div>
-            </div>
-            <div className="flex-1 text-center md:text-left">
-              <h2 className="anim-head mb-4 text-3xl font-bold leading-tight text-navy">
-                Atención urológica especializada con diagnóstico preciso desde tu primera consulta
-              </h2>
-              <p className="install-text leading-relaxed text-ink">
-                Atendemos los principales padecimientos urológicos con un enfoque integral y
-                tecnología de vanguardia.
-              </p>
-              <p className="install-text mt-4 leading-relaxed text-ink">
-                Desde tu primera consulta obtendrás una valoración precisa, diagnóstico oportuno y
-                un plan de tratamiento personalizado. Atención privada, profesional y enfocada en
-                mejorar tu calidad de vida.
-              </p>
-              <div className="install-text mt-6 flex flex-wrap justify-center gap-3 md:justify-start">
-                <a
-                  href={`https://wa.me/${doctor.whatsapp}?text=${encodeURIComponent("Hola, quisiera agendar una consulta.")}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-pill rounded-full bg-emerald-500 px-6 py-3 font-medium text-white transition-colors hover:bg-emerald-600"
-                >
-                  Escribir por WhatsApp
-                </a>
-                <a
-                  href={doctor.redes.doctoralia}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-pill rounded-full border border-brand px-6 py-3 font-medium text-brand transition-colors hover:bg-brand hover:text-white"
-                >
-                  Agendar en Doctoralia
-                </a>
-              </div>
-              {/* En desktop las miniaturas van debajo de los botones */}
-              <div className="install-text mt-6 hidden md:block">
-                <InstalacionesThumbnails
-                  images={fotosInstalaciones}
-                  current={instalaciones.current}
-                  onNavigate={instalaciones.navigate}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <InstalacionesSection
+        fotos={fotosInstalaciones}
+        fotosGrande={fotosInstalacionesGrande}
+        whatsapp={doctor.whatsapp}
+        doctoraliaUrl={doctor.redes.doctoralia}
+        onOpenLightbox={setLightboxIndex}
+      />
 
       {/* 3. Padecimientos */}
       <section id="padecimientos" className="bg-white px-6 py-16">

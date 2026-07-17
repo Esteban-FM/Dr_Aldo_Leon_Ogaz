@@ -5,16 +5,18 @@ import gsap from "gsap";
 // para que las miniaturas puedan vivir en otra parte del layout en desktop.
 export default function InstalacionesCarousel({ images, current, onOpenLightbox }) {
   const imgRefs = useRef([]);
+  const prevRef = useRef(current);
 
   useEffect(() => {
-    images.forEach((_, i) => {
-      gsap.to(imgRefs.current[i], {
-        opacity: i === current ? 1 : 0,
-        duration: 0.55,
-        ease: "power2.inOut",
-      });
-    });
-  }, [current, images]);
+    const prev = prevRef.current;
+    prevRef.current = current;
+    if (prev === current) return;
+
+    // Solo animamos la imagen saliente y la entrante — el resto ya está en
+    // opacity 0 y no necesita un tween corriendo cada tick del ticker.
+    gsap.to(imgRefs.current[prev], { opacity: 0, duration: 0.55, ease: "power2.inOut" });
+    gsap.to(imgRefs.current[current], { opacity: 1, duration: 0.55, ease: "power2.inOut" });
+  }, [current]);
 
   return (
     <button
@@ -29,7 +31,7 @@ export default function InstalacionesCarousel({ images, current, onOpenLightbox 
           src={src}
           alt={`Instalaciones del consultorio, foto ${i + 1}`}
           className="absolute inset-0 h-full w-full object-cover"
-          style={{ opacity: i === current ? 1 : 0 }}
+          style={{ opacity: i === current ? 1 : 0, willChange: "opacity" }}
           loading={i === 0 ? "eager" : "lazy"}
         />
       ))}
