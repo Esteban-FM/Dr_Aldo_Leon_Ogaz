@@ -15,7 +15,7 @@ export default defineConfig({
         papilomaHumano: resolve(__dirname, "papiloma-humano/index.html"),
         disfuncionErectil: resolve(__dirname, "disfuncion-erectil/index.html"),
         crecimientoProstatico: resolve(__dirname, "crecimiento-prostatico/index.html"),
-        calculosRenales: resolve(__dirname, "calculos-renales/index.html"),
+        piedrasEnLosRinones: resolve(__dirname, "piedras-en-los-rinones/index.html"),
         vasectomia: resolve(__dirname, "vasectomia/index.html"),
         deteccionCancerProstata: resolve(__dirname, "deteccion-cancer-prostata/index.html"),
         // Al agregar un nuevo padecimiento/paquete, súmalo aquí también.

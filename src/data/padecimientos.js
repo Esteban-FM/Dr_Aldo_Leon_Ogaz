@@ -26,10 +26,10 @@ export const padecimientos = [
     mensajeWhatsapp: "Hola, quisiera agendar una consulta por crecimiento de próstata.",
   },
   {
-    slug: "calculos-renales",
-    nombre: "Cálculos Renales",
+    slug: "piedras-en-los-rinones",
+    nombre: "Piedras en los Riñones",
     resumenCorto: "Diagnóstico por imagen y tratamiento de piedras en el riñón.",
-    mensajeWhatsapp: "Hola, quisiera agendar una consulta por cálculos renales.",
+    mensajeWhatsapp: "Hola, quisiera agendar una consulta por piedras en los riñones.",
   },
   {
     slug: "vasectomia",

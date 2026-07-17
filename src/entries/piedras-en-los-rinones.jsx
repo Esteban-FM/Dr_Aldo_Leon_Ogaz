@@ -5,6 +5,6 @@ import "../styles/index.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <PadecimientoPage slug="calculos-renales" />
+    <PadecimientoPage slug="piedras-en-los-rinones" />
   </StrictMode>
 );
