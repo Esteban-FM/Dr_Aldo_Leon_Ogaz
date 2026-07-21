@@ -8,6 +8,8 @@ import FloatingWhatsApp from "../components/FloatingWhatsApp";
 import Lightbox from "../components/Lightbox";
 import DoctorCarousel from "../components/DoctorCarousel";
 import InstalacionesSection from "../components/InstalacionesSection";
+import SegurosMarquee from "../components/SegurosMarquee";
+import MiembroActivoStrip from "../components/MiembroActivoStrip";
 import EnfermedadesAccordion from "../components/EnfermedadesAccordion";
 import SedeSchema from "../components/SedeSchema";
 import { sedes } from "../data/sedes";
@@ -188,6 +190,8 @@ export default function SedePage({ slug }) {
         </div>
       </section>
 
+      <SegurosMarquee />
+
       {/* Instalaciones */}
       <InstalacionesSection
         fotos={sede.fotos}
@@ -251,7 +255,7 @@ export default function SedePage({ slug }) {
       </section>
 
       {/* Experiencia y credenciales */}
-      <section id="experiencia" className="bg-white px-6 py-16">
+      <section id="experiencia" className="bg-white px-6 pb-8 pt-16">
         <div className="mx-auto max-w-5xl">
           <h2 className="anim-head mb-8 text-2xl font-semibold text-navy">Experiencia y credenciales</h2>
           <div className="grid gap-8 md:grid-cols-[280px_1fr] md:gap-12">
@@ -299,6 +303,8 @@ export default function SedePage({ slug }) {
           </div>
         </div>
       </section>
+
+      <MiembroActivoStrip />
 
       <Footer />
       <FloatingWhatsApp mensaje={`Hola, quisiera agendar una cita en la sede de ${sede.nombreSede}.`} />

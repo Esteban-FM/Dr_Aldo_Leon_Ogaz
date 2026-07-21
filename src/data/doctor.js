@@ -4,14 +4,16 @@
 export const doctor = {
   nombre: "Dr. Aldo León Ogaz",
   especialidad: "Urólogo",
+  tituloCorto: "Urólogo / Uro-oncólogo",
   certificacion: "Certificado por el Consejo Mexicano de Urología",
   cedulas: ["14818168", "10992932"],
-  bio: `Cirujano Urólogo certificado por el Consejo Mexicano de Urología. Realizó sus estudios de subespecialidad en la CDMX en el Hospital Juárez de México con título de la UNAM.`,
+  bio: `Cirujano Urólogo certificado por el Consejo Mexicano de Urología. Realizó sus estudios de subespecialidad en la CDMX en el Hospital Juárez de México con título de la UNAM. Urólogo oncólogo por la Universidad de Monterrey.`,
   enfoque: [
-    "Endourología y laparoscopia urológica",
-    "Urología oncológica",
-    "Cirugía de próstata",
-    "Endourología",
+    "Laparoscopia urológica.",
+    "Urología oncológica (cáncer).",
+    "Cirugía de próstata láser.",
+    "Endourología.",
+    "Andrología.",
   ],
   formacion: [
     { titulo: "Médico Cirujano", institucion: "UNAM, CU CDMX", periodo: "2011–2018" },
@@ -42,6 +44,11 @@ export const doctor = {
       puesto: "Uro-oncología, rotación externa",
       lugar: "IVO Instituto Valenciano de Oncología (Valencia, España)",
       periodo: "2024",
+    },
+    {
+      puesto: "Título de Médico Cirujano homologado",
+      lugar: "Título universitario oficial español",
+      periodo: "2020",
     },
   ],
   reconocimientos: [

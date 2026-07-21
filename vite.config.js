@@ -18,6 +18,8 @@ export default defineConfig({
         piedrasEnLosRinones: resolve(__dirname, "piedras-en-los-rinones/index.html"),
         vasectomia: resolve(__dirname, "vasectomia/index.html"),
         deteccionCancerProstata: resolve(__dirname, "deteccion-cancer-prostata/index.html"),
+        circuncisionLaser: resolve(__dirname, "circuncision-laser/index.html"),
+        tumorRenal: resolve(__dirname, "tumor-renal/index.html"),
         // Al agregar un nuevo padecimiento/paquete, súmalo aquí también.
       },
     },

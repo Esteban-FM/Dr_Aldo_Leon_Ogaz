@@ -8,21 +8,9 @@
 
 export const padecimientos = [
   {
-    slug: "papiloma-humano",
-    nombre: "Virus del Papiloma Humano (VPH)",
-    resumenCorto: "Diagnóstico y tratamiento de verrugas genitales y VPH.",
-    mensajeWhatsapp: "Hola, quisiera agendar una consulta por VPH / verrugas genitales.",
-  },
-  {
-    slug: "disfuncion-erectil",
-    nombre: "Disfunción Eréctil",
-    resumenCorto: "Evaluación y tratamiento personalizado de disfunción eréctil.",
-    mensajeWhatsapp: "Hola, quisiera agendar una consulta por disfunción eréctil.",
-  },
-  {
     slug: "crecimiento-prostatico",
-    nombre: "Crecimiento Prostático (Hiperplasia Prostática Benigna)",
-    resumenCorto: "Detección y manejo del crecimiento prostático benigno.",
+    nombre: "Crecimiento Prostático (Hiperplasia Prostática Benigna) Cirugía láser",
+    resumenCorto: "Detección y manejo del crecimiento prostático obstructivo.",
     mensajeWhatsapp: "Hola, quisiera agendar una consulta por crecimiento de próstata.",
   },
   {
@@ -32,15 +20,39 @@ export const padecimientos = [
     mensajeWhatsapp: "Hola, quisiera agendar una consulta por piedras en los riñones.",
   },
   {
-    slug: "vasectomia",
-    nombre: "Vasectomía",
-    resumenCorto: "Procedimiento de anticoncepción masculina definitiva.",
-    mensajeWhatsapp: "Hola, quisiera información sobre vasectomía.",
+    slug: "papiloma-humano",
+    nombre: "Virus del Papiloma Humano (VPH)",
+    resumenCorto: "Diagnóstico y tratamiento de verrugas genitales y VPH.",
+    mensajeWhatsapp: "Hola, quisiera agendar una consulta por VPH / verrugas genitales.",
   },
   {
     slug: "deteccion-cancer-prostata",
     nombre: "Detección Oportuna del Cáncer de Próstata",
     resumenCorto: "Revisión preventiva y detección temprana.",
     mensajeWhatsapp: "Hola, quisiera agendar una revisión de detección de cáncer de próstata.",
+  },
+  {
+    slug: "disfuncion-erectil",
+    nombre: "Disfunción Eréctil",
+    resumenCorto: "Evaluación y tratamiento personalizado de disfunción eréctil.",
+    mensajeWhatsapp: "Hola, quisiera agendar una consulta por disfunción eréctil.",
+  },
+  {
+    slug: "vasectomia",
+    nombre: "Vasectomía",
+    resumenCorto: "Procedimiento de anticoncepción masculina definitiva.",
+    mensajeWhatsapp: "Hola, quisiera información sobre vasectomía.",
+  },
+  {
+    slug: "circuncision-laser",
+    nombre: "Circuncisión Láser",
+    resumenCorto: "Procedimiento para tratar la fimosis.",
+    mensajeWhatsapp: "Hola, quisiera información sobre circuncisión láser.",
+  },
+  {
+    slug: "tumor-renal",
+    nombre: "Tumor Renal (Cáncer)",
+    resumenCorto: "Diagnóstico por imagen y tratamiento con control oncológico.",
+    mensajeWhatsapp: "Hola, quisiera agendar una consulta por tumor renal.",
   },
 ];

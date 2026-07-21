@@ -8,6 +8,8 @@ import FloatingWhatsApp from "../components/FloatingWhatsApp";
 import Lightbox from "../components/Lightbox";
 import DoctorCarousel from "../components/DoctorCarousel";
 import InstalacionesSection from "../components/InstalacionesSection";
+import SegurosMarquee from "../components/SegurosMarquee";
+import MiembroActivoStrip from "../components/MiembroActivoStrip";
 import { doctor } from "../data/doctor";
 import { padecimientos } from "../data/padecimientos";
 import { sedes } from "../data/sedes";
@@ -213,6 +215,8 @@ export default function Home() {
         </div>
       </section>
 
+      <SegurosMarquee />
+
       {/* 2. Instalaciones */}
       <InstalacionesSection
         fotos={fotosInstalaciones}
@@ -279,7 +283,7 @@ export default function Home() {
       </section>
 
       {/* 5. Experiencia y credenciales */}
-      <section id="experiencia" className="bg-white px-6 py-16">
+      <section id="experiencia" className="bg-white px-6 pb-8 pt-16">
         <div className="mx-auto max-w-5xl">
           <h2 className="anim-head mb-8 text-2xl font-semibold text-navy">Experiencia y credenciales</h2>
 
@@ -334,6 +338,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <MiembroActivoStrip />
 
       <Footer />
       <FloatingWhatsApp mensaje="Hola, quisiera agendar una consulta." />

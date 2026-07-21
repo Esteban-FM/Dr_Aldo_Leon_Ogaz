@@ -21,7 +21,10 @@ export default function Header() {
           {/* Logo */}
           <a href="/" className="flex items-center gap-2">
             <img src="/logo.svg" alt="Logo Dr. Aldo León Ogaz" className="h-8 w-8" />
-            <span className="text-sm font-semibold text-navy">{doctor.nombre}</span>
+            <span className="flex flex-col leading-tight">
+              <span className="text-sm font-semibold text-navy">{doctor.nombre}</span>
+              <span className="text-xs font-medium text-brand">{doctor.tituloCorto}</span>
+            </span>
           </a>
 
           {/* Nav desktop */}
