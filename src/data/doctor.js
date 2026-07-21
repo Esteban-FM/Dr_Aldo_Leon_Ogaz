@@ -51,7 +51,7 @@ export const doctor = {
   idiomas: ["Español", "Inglés"],
   redes: {
     instagram: "https://www.instagram.com/dr.aldoleonogaz/",
-    facebook: "https://www.facebook.com/profile.php?id=61576285949504",
+    facebook: "https://www.facebook.com/dr.aldoleonogaz",
     doctoralia: "https://www.doctoralia.com.mx/aldo-leon-ogaz/urologo/ciudad-de-mexico",
   },
   whatsapp: "526143044906",

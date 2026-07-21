@@ -178,25 +178,27 @@ export default function Home() {
               <div className="mt-3 flex divide-x divide-rule">
                 {/* Chihuahua */}
                 <div className="flex-1 pr-4">
-                  <p className="text-sm font-semibold text-navy">{sedes.chihuahua.nombreSede}</p>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-brand">Chihuahua</p>
+                  <p className="mt-1.5 text-sm font-semibold text-navy">{sedes.chihuahua.nombreSede}</p>
                   <p className="mt-0.5 text-xs leading-relaxed text-ink">
                     {sedes.chihuahua.direccion.split(",").slice(0, 2).join(",")}
                   </p>
-                  <a href="/chihuahua/" className="mt-1.5 inline-block text-xs text-brand underline transition-colors hover:text-brand-hover">
-                    Ver consultorio →
+                  <a href={sedes.chihuahua.mapsUrl} target="_blank" rel="noopener noreferrer" className="mt-1.5 inline-block text-xs text-brand underline transition-colors hover:text-brand-hover">
+                    Ver en Google Maps →
                   </a>
                 </div>
                 {/* CDMX */}
-                <div className="flex-1 space-y-2 pl-4">
+                <div className="flex-1 space-y-3 pl-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-brand">Ciudad de México</p>
                   {sedes.cdmx.consultorios.map((c) => (
                     <div key={c.nombre}>
                       <p className="text-sm font-semibold text-navy">{c.nombre}</p>
                       <p className="mt-0.5 text-xs leading-relaxed text-ink">{c.direccion}</p>
+                      <a href={c.mapsUrl} target="_blank" rel="noopener noreferrer" className="mt-1.5 inline-block text-xs text-brand underline transition-colors hover:text-brand-hover">
+                        Ver en Google Maps →
+                      </a>
                     </div>
                   ))}
-                  <a href="/cdmx/" className="inline-block text-xs text-brand underline transition-colors hover:text-brand-hover">
-                    Ver consultorios →
-                  </a>
                 </div>
               </div>
             </div>

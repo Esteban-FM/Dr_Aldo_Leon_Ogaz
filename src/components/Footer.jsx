@@ -5,7 +5,7 @@ import { sedes } from "../data/sedes";
 export default function Footer() {
   return (
     <footer className="bg-navy px-6 py-12">
-      <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
+      <div className="mx-auto grid max-w-6xl gap-8 sm:grid-cols-2 md:grid-cols-5">
         <div>
           <p className="mb-1 text-sm font-semibold text-white">{doctor.nombre}</p>
           <p className="text-sm text-white/50">{doctor.especialidad} · {doctor.certificacion}</p>
@@ -44,6 +44,27 @@ export default function Footer() {
                   {p.nombre}
                 </a>
               </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="sm:col-span-2 md:col-span-2">
+          <p className="mb-3 text-sm font-semibold text-white">Áreas de servicio</p>
+          <ul className="columns-2 gap-x-6 text-sm">
+            {[
+              "Urólogo en México",
+              "Urólogo en Ciudad de México",
+              "Urólogo en Gustavo A Madero",
+              "Urólogo en Cuauhtémoc",
+              "Urólogo Ecatepec",
+              "Urólogo Tlalnepantla",
+              "Urólogo en Iztacalco",
+              "Urólogo en Iztapalapa",
+              "Urólogo en Lindavista",
+              "Urólogo en Chihuahua",
+              "Urólogo en Delicias",
+            ].map((area) => (
+              <li key={area} className="mb-2 break-inside-avoid text-white/50 transition-colors hover:text-white">{area}</li>
             ))}
           </ul>
         </div>

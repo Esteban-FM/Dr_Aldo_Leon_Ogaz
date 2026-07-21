@@ -164,7 +164,7 @@ export default function SedePage({ slug }) {
                         {c.mapsUrl && (
                           <a href={c.mapsUrl} target="_blank" rel="noopener noreferrer"
                             className="mt-1.5 inline-block text-xs text-brand underline transition-colors hover:text-brand-hover">
-                            Ver en Maps →
+                            Ver en Google Maps →
                           </a>
                         )}
                       </div>
