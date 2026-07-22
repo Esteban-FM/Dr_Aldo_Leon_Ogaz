@@ -70,14 +70,9 @@ export default function PadecimientoPage({ slug, children }) {
           </div>
 
           {/* Contenido único del padecimiento */}
-          <div className="prose prose-slate mt-12 max-w-none">
-            {children ?? (
-              <p className="text-dim">
-                {/* TODO: contenido médico redactado — nunca copiado de referencias */}
-                Contenido pendiente de redactar para "{info.nombre}".
-              </p>
-            )}
-          </div>
+          {children && (
+            <div className="prose prose-slate mt-12 max-w-none">{children}</div>
+          )}
 
           <div className="mt-12 rounded-2xl border border-rule bg-canvas p-6">
             <h2 className="mb-4 font-semibold text-navy">Disponible en nuestras sedes</h2>
