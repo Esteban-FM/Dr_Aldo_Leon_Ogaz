@@ -182,9 +182,8 @@ export default function Home() {
                 <div className="flex-1 pr-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-brand">Chihuahua</p>
                   <p className="mt-1.5 text-sm font-semibold text-navy">{sedes.chihuahua.nombreSede}</p>
-                  <p className="mt-0.5 text-xs leading-relaxed text-ink">
-                    {sedes.chihuahua.direccion.split(",").slice(0, 2).join(",")}
-                  </p>
+                  <p className="mt-0.5 text-xs font-medium text-brand">{sedes.chihuahua.detalle}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-ink">{sedes.chihuahua.direccion}</p>
                   <a href={sedes.chihuahua.mapsUrl} target="_blank" rel="noopener noreferrer" className="mt-1.5 inline-block text-xs text-brand underline transition-colors hover:text-brand-hover">
                     Ver en Google Maps →
                   </a>
@@ -195,7 +194,8 @@ export default function Home() {
                   {sedes.cdmx.consultorios.map((c) => (
                     <div key={c.nombre}>
                       <p className="text-sm font-semibold text-navy">{c.nombre}</p>
-                      <p className="mt-0.5 text-xs leading-relaxed text-ink">{c.direccion}</p>
+                      <p className="mt-0.5 text-xs font-medium text-brand">{c.detalle}</p>
+                      <p className="mt-1 text-xs leading-relaxed text-ink">{c.direccion}</p>
                       <a href={c.mapsUrl} target="_blank" rel="noopener noreferrer" className="mt-1.5 inline-block text-xs text-brand underline transition-colors hover:text-brand-hover">
                         Ver en Google Maps →
                       </a>
@@ -257,7 +257,17 @@ export default function Home() {
                   />
                   <div className="p-3 md:p-6">
                     <h3 className="text-sm font-semibold text-navy md:text-base">{p.nombre}</h3>
-                    <p className="mt-1.5 text-xs text-dim md:mt-2 md:text-sm">{p.resumenCorto}</p>
+                    {p.puntos ? (
+                      <ul className="mt-1.5 space-y-0.5 md:mt-2">
+                        {p.puntos.map((punto) => (
+                          <li key={punto} className="text-xs text-dim md:text-sm">
+                            {punto}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="mt-1.5 text-xs text-dim md:mt-2 md:text-sm">{p.resumenCorto}</p>
+                    )}
                   </div>
                 </div>
                 <div className="flex flex-col gap-2 px-3 pb-3 pt-1 md:px-6 md:pb-6 md:pt-2">

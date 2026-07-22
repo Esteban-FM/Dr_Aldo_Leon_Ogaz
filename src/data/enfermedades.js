@@ -72,6 +72,7 @@ export const enfermedades = [
       "Priapismo",
       "Hipogonadismo",
       "Infertilidad",
+      "Dispareunia / Dolor en las relaciones sexuales",
     ],
   },
   {

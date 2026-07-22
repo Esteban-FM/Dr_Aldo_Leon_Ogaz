@@ -35,6 +35,18 @@ export default function PadecimientoPage({ slug, children }) {
               </span>
               <h1 className="pad-title mt-4 text-3xl font-bold text-navy">{info.nombre}</h1>
               <p className="pad-summary mt-3 leading-relaxed text-ink">{info.resumenCorto}</p>
+              {info.puntos && (
+                <ul className="pad-summary mt-3 space-y-1.5">
+                  {info.puntos.map((punto) => (
+                    <li key={punto} className="flex items-center gap-2 text-sm text-ink">
+                      <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4 flex-shrink-0 text-brand" aria-hidden="true">
+                        <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clipRule="evenodd" />
+                      </svg>
+                      {punto}
+                    </li>
+                  ))}
+                </ul>
+              )}
 
               <div className="pad-cta mt-8">
                 <a

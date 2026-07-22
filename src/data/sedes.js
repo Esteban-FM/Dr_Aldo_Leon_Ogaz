@@ -6,8 +6,9 @@ export const sedes = {
     slug: "chihuahua",
     ciudad: "Chihuahua",
     nombreSede: "Hospital Star Médica Chihuahua",
+    detalle: "Consultorio 1015, décimo piso",
     direccion:
-      "Periférico de la Juventud 6103, consultorio 1015, décimo piso, San Francisco Country Club, Chihuahua, Chih. 31110",
+      "Periférico de la Juventud 6103, San Francisco Country Club, Chihuahua, Chih. 31110",
     whatsapp: "526143044906",
     coords: { lat: 28.6640224, lng: -106.1305618 },
     mapsUrl: "https://maps.app.goo.gl/8Fnm9PVCv1LDy4mK7",

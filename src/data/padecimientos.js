@@ -55,4 +55,22 @@ export const padecimientos = [
     resumenCorto: "Diagnóstico por imagen y tratamiento con control oncológico.",
     mensajeWhatsapp: "Hola, quisiera agendar una consulta por tumor renal.",
   },
+  {
+    slug: "urgencias",
+    nombre: "Urgencias",
+    resumenCorto: "Atención inmediata para urgencias urológicas.",
+    // Tarjeta muestra estos puntos en lista en vez de resumenCorto (ver Home.jsx/SedePage.jsx).
+    puntos: [
+      "Hematuria / Sangre en la orina",
+      "Cólico renal / Cólico renoureteral",
+      "Fractura de pene",
+    ],
+    mensajeWhatsapp: "Hola, tengo una urgencia urológica y necesito atención.",
+  },
+  {
+    slug: "enfermedades-transmision-sexual",
+    nombre: "Enfermedades de Transmisión Sexual (ETS)",
+    resumenCorto: "Diagnóstico y tratamiento de enfermedades de transmisión sexual, como molusco contagioso, entre otras.",
+    mensajeWhatsapp: "Hola, quisiera agendar una consulta por una enfermedad de transmisión sexual.",
+  },
 ];

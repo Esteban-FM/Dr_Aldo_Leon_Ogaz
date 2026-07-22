@@ -143,7 +143,10 @@ export default function SedePage({ slug }) {
                 <div className="sede-address mt-6 rounded-2xl border border-rule bg-canvas p-4 text-left">
                   <p className="text-xs font-medium uppercase tracking-wide text-dim">Ubicación</p>
                   <p className="mt-1.5 font-semibold text-navy">{sede.nombreSede}</p>
-                  <p className="mt-0.5 text-sm leading-relaxed text-ink">{sede.direccion}</p>
+                  {sede.detalle && (
+                    <p className="mt-0.5 text-sm font-medium text-brand">{sede.detalle}</p>
+                  )}
+                  <p className="mt-1 text-sm leading-relaxed text-ink">{sede.direccion}</p>
                   {sede.mapsUrl && (
                     <a href={sede.mapsUrl} target="_blank" rel="noopener noreferrer"
                       className="mt-2 inline-block text-xs text-brand underline transition-colors hover:text-brand-hover">
@@ -229,7 +232,17 @@ export default function SedePage({ slug }) {
                   />
                   <div className="p-3 md:p-6">
                     <h3 className="text-sm font-semibold text-navy md:text-base">{p.nombre}</h3>
-                    <p className="mt-1.5 text-xs text-dim md:mt-2 md:text-sm">{p.resumenCorto}</p>
+                    {p.puntos ? (
+                      <ul className="mt-1.5 space-y-0.5 md:mt-2">
+                        {p.puntos.map((punto) => (
+                          <li key={punto} className="text-xs text-dim md:text-sm">
+                            {punto}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="mt-1.5 text-xs text-dim md:mt-2 md:text-sm">{p.resumenCorto}</p>
+                    )}
                   </div>
                 </div>
                 <div className="flex flex-col gap-2 px-3 pb-3 pt-1 md:px-6 md:pb-6 md:pt-2">

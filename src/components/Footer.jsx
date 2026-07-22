@@ -54,6 +54,7 @@ export default function Footer() {
             {[
               "Urólogo en México",
               "Urólogo en Ciudad de México",
+              "Urólogo en CDMX",
               "Urólogo en Gustavo A Madero",
               "Urólogo en Cuauhtémoc",
               "Urólogo Ecatepec",
