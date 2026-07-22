@@ -145,6 +145,9 @@ export const enfermedades = [
       "Priapismo",
       "Retención aguda de orina",
       "Lesión traumática del riñón, vejiga y uretra",
+      "Hematuria / Sangre en la orina",
+      "Cólico renal / Cólico renoureteral",
+      "Fractura de pene",
     ],
   },
 ];

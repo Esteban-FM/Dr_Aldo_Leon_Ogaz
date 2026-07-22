@@ -63,7 +63,7 @@ export const padecimientos = [
     puntos: [
       "Hematuria / Sangre en la orina",
       "Cólico renal / Cólico renoureteral",
-      "Fractura de pene",
+      "Retención aguda de orina",
     ],
     mensajeWhatsapp: "Hola, tengo una urgencia urológica y necesito atención.",
   },
