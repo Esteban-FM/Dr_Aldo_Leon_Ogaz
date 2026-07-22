@@ -67,10 +67,4 @@ export const padecimientos = [
     ],
     mensajeWhatsapp: "Hola, tengo una urgencia urológica y necesito atención.",
   },
-  {
-    slug: "enfermedades-transmision-sexual",
-    nombre: "Enfermedades de Transmisión Sexual (ETS)",
-    resumenCorto: "Diagnóstico y tratamiento de enfermedades de transmisión sexual, como molusco contagioso, entre otras.",
-    mensajeWhatsapp: "Hola, quisiera agendar una consulta por una enfermedad de transmisión sexual.",
-  },
 ];

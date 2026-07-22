@@ -21,7 +21,6 @@ export default defineConfig({
         circuncisionLaser: resolve(__dirname, "circuncision-laser/index.html"),
         tumorRenal: resolve(__dirname, "tumor-renal/index.html"),
         urgencias: resolve(__dirname, "urgencias/index.html"),
-        enfermedadesTransmisionSexual: resolve(__dirname, "enfermedades-transmision-sexual/index.html"),
         // Al agregar un nuevo padecimiento/paquete, súmalo aquí también.
       },
     },
