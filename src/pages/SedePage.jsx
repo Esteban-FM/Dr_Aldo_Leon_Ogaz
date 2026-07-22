@@ -216,7 +216,7 @@ export default function SedePage({ slug }) {
       </section>
 
       {/* Consultas y paquetes */}
-      <section className="px-6 py-16">
+      <section id="consultas" className="px-6 py-16">
         <div className="mx-auto max-w-5xl">
           <h2 className="anim-head mb-2 text-2xl font-semibold text-navy">Consultas y paquetes</h2>
           <p className="mb-8 text-sm text-dim">Agenda directamente o solicita más información.</p>

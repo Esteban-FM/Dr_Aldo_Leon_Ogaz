@@ -15,15 +15,6 @@ export const doctor = {
     "Endourología.",
     "Andrología.",
   ],
-  formacion: [
-    { titulo: "Médico Cirujano", institucion: "UNAM, CU CDMX", periodo: "2011–2018" },
-    { titulo: "Especialista en Urología", institucion: "UNAM", periodo: "2020–2024" },
-    {
-      titulo: "Alta especialidad en Uro-oncología y laparoscopia reconstructiva avanzada",
-      institucion: "Universidad de Monterrey",
-      periodo: "2025–2026",
-    },
-  ],
   experiencia: [
     {
       puesto: "Cirugía General",
