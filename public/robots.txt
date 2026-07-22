@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://TU-DOMINIO-AQUI.com/sitemap.xml
+Sitemap: https://urologoaldoleonogaz.com/sitemap.xml
